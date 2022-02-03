@@ -1,0 +1,75 @@
+@font-face{
+  font-family: 'NeueMachina';
+  src: url('./fonts/Neue\ Machina\ /NeueMachina-Regular.otf');
+}
+
+body {
+  margin: 0;
+  font-family: 'NeueMachina';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+#background-video{
+  filter: brightness(70%);
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.sidebar{
+
+}
+
+.nav-grid{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.button-group{
+  margin-top:2px;
+  display:flex;
+  margin-left: 145px;
+  padding: 5px;
+}
+
+.css-hip9hq-MuiPaper-root-MuiAppBar-root{
+  height: 65px;
+}
+
+.shadow{
+  text-shadow: 2px 2px 5px black;
+}
+
+.icon-container{
+ 
+ 
+  display:flex;
+  flex-direction: column;
+  height:200px;
+  justify-content: space-evenly;
+  margin-left: 1em;
+  
+  padding: 10px;
+}
+
+@media only screen and (max-width:450px){
+  .sidebar{
+    width:50vw !important; 
+  }
+  .body{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+  }
+}
