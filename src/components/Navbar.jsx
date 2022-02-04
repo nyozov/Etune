@@ -36,7 +36,7 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar sx={{color:'rgba(255,255,255,0.8)', background:'transparent'}}position="static">
+    <AppBar sx={{maxWidth:'70vw',color:'rgba(255,255,255,0.8)', background:'transparent'}}position="static">
       <Container maxWidth="xl">
         <Toolbar sx={{justifyContent:'center'}}disableGutters>
 

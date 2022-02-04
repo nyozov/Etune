@@ -26,9 +26,7 @@ code {
   z-index: -1;
 }
 
-.sidebar{
 
-}
 
 .nav-grid{
   display: flex;
@@ -71,5 +69,8 @@ code {
     text-align: center;
     display: flex;
     justify-content: center;
+  }
+  .title-group{
+    margin-left:-60%;
   }
 }

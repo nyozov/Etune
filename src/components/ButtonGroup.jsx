@@ -1,11 +1,11 @@
 import React from 'react';
 import SvgButton from './SvgButton'
 
-export default function ButtonGroup() {
+export default function ButtonGroup({setFormOpen}) {
   return (
     <div>
   <div className='button-group'>
-    <SvgButton>Order Now</SvgButton>
+    <SvgButton onClick={setFormOpen} >Order Now</SvgButton>
     <SvgButton>About Us</SvgButton>
 
   </div>
