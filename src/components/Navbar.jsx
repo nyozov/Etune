@@ -12,6 +12,7 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { motion } from 'framer-motion';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -36,8 +37,12 @@ const ResponsiveAppBar = () => {
   };
 
   return (
-    <AppBar sx={{maxWidth:'70vw',color:'rgba(255,255,255,0.8)', background:'transparent'}}position="static">
+    <AppBar elevation={0} className='navbar' sx={{maxWidth:'70vw',color:'rgba(255,255,255,0.8)', background:'transparent'}}position="static">
       <Container maxWidth="xl">
+      <motion.div
+    initial={{opacity:0}}
+    animate={{opacity: 1}}
+    transition={{ duration: 1.5 }}>
         <Toolbar sx={{justifyContent:'center'}}disableGutters>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' } }}>
@@ -116,6 +121,7 @@ const ResponsiveAppBar = () => {
             </Menu>
           </Box>
         </Toolbar>
+        </motion.div>
       </Container>
     </AppBar>
   );

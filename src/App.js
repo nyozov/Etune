@@ -17,7 +17,7 @@ function App() {
        
       <Sidebar setFormOpen={setFormOpen}/>
 
-      
+    
      <Navbar/>
      
      <FormModal open={formOpen} setOpen={setFormOpen}/>

@@ -8,6 +8,7 @@ body {
   font-family: 'NeueMachina';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 code {
@@ -20,7 +21,7 @@ code {
   object-fit: cover;
   width: 100vw;
   height: 100vh;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: -1;
@@ -32,6 +33,7 @@ code {
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
+  height:  100px !important;
 }
 
 .button-group{
@@ -60,7 +62,9 @@ code {
   
   padding: 10px;
 }
-
+.navbar{
+  height: 100px !important;
+}
 @media only screen and (max-width:450px){
   .sidebar{
     width:50vw !important; 
@@ -72,5 +76,11 @@ code {
   }
   .title-group{
     margin-left:-60%;
+  }
+  .navbar{
+    width:50vw !important;
+  }
+  .order-form{
+    width: 100vw !important;
   }
 }
