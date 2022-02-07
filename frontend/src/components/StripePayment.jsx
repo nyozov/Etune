@@ -22,10 +22,6 @@ const CARD_OPTIONS = {
     }
   }
 }
-const options = {
-  // passing the client secret obtained from the server
-  clientSecret: process.env.REACT_APP_STRIPE_SECRET_KEY,
-};
 
 export default function StripePayment({setFormMode}) {
   const [success, setSuccess] = useState(false);
@@ -45,7 +41,7 @@ export default function StripePayment({setFormMode}) {
           amount: 100,
           id,
         });
-        if (response.data.sucess) {
+        if (response.data.success) {
           console.log("successful payment");
           setSuccess(true);
         }
@@ -72,7 +68,11 @@ export default function StripePayment({setFormMode}) {
 
   </form>
   :
-  <div><h2>Purchase Successful</h2></div>
+  <div>
+    <h2>Purchase Successful</h2>
+    <p>You will recieve an email of your receipt and you will hear from us through email within 2 weeks. Thank you for your purchase.</p>
+    <Button variant='contained'>Close</Button>
+    </div>
   }
   </>
   );
