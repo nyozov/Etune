@@ -7,6 +7,8 @@ import { FormControl, InputLabel, Input, FormHelperText, FormGroup, Select, Menu
 import { motion } from 'framer-motion'
 import { ButtonUnstyled } from '@mui/base';
 import { useState } from 'react';
+import ReviewForm from './ReviewForm'
+import PaymentForm from './PaymentForm'
 
 const style = {
   position: 'absolute',
@@ -22,12 +24,16 @@ const style = {
 };
 
 export default function BasicModal({open, setOpen}) {
+  
   const [formResults, setFormResults] = useState({
     email: '',
     engine: '',
     service: '',
 
   })
+
+  const [formMode, setFormMode] = useState('options')
+  console.log(formMode)
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -36,6 +42,7 @@ export default function BasicModal({open, setOpen}) {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(formResults);
+    setFormMode('review')
   }
   
 
@@ -54,7 +61,7 @@ export default function BasicModal({open, setOpen}) {
   animate={{ y: 350 }}
   transition={{ ease: "easeOut", duration: 1 }}
   >
-        <Box className='order-form' sx={style}>
+        {formMode === 'options' && <Box className='order-form' sx={style}>
           <form onSubmit={handleSubmit}>
           <FormGroup>
         <FormControl sx={{margin:'15px'}}>
@@ -128,6 +135,13 @@ sx={{color:'black'}}
 </FormGroup>
 </form>
         </Box>
+}
+{formMode === 'review' &&
+<ReviewForm formResults={formResults} formMode={formMode} setFormMode={setFormMode}/>
+}
+{formMode === 'payment' &&
+<PaymentForm formResults={formResults} formMode={formMode} setFormMode={setFormMode}/>
+}
         </motion.div>
       </Modal>
     </div>

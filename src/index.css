@@ -84,3 +84,17 @@ code {
     width: 100vw !important;
   }
 }
+
+li{
+  list-style-type: none;
+}
+
+.form-button-group{
+  display:flex;
+  flex-direction: column;
+}
+
+.form-button-group Button{
+  padding:5px;
+  margin:5px;
+}
