@@ -41,6 +41,7 @@ code {
   display:flex;
   margin-left: 145px;
   padding: 5px;
+  
 }
 
 .css-hip9hq-MuiPaper-root-MuiAppBar-root{
@@ -65,6 +66,11 @@ code {
 .navbar{
   height: 100px !important;
 }
+
+.order-form{
+  width: 500px;
+  height: 620px;
+}
 @media only screen and (max-width:450px){
   .sidebar{
     width:50vw !important; 
@@ -81,7 +87,7 @@ code {
     width:50vw !important;
   }
   .order-form{
-    width: 100vw !important;
+    width: 98vw !important;
   }
 }
 
@@ -92,6 +98,8 @@ li{
 .form-button-group{
   display:flex;
   flex-direction: column;
+  
+  
 }
 
 .form-button-group Button{

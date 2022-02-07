@@ -16,7 +16,6 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: "350px",
   bgcolor: "white",
   backdropFilter: "blur(5px)",
   borderRadius: "2px",
@@ -47,12 +46,14 @@ export default function Payment({ formResults, setFormMode }) {
             </FormHelperText>
           </FormControl>
           <FormControl>
-            <div className='form-button-group'>
-            <Button onClick={()=>setFormMode("payment")} variant="contained">Proceed To Payment</Button>
+           
+          </FormControl>
+          
+        </FormGroup>
+        <div className='form-button-group'>
+            <Button onClick={()=>setFormMode("payment")} variant="contained">Confirm</Button>
             <Button onClick={() => setFormMode("options")} variant="contained">Back</Button>
             </div>
-          </FormControl>
-        </FormGroup>
       </Box>
     </div>
   );
