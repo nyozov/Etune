@@ -2,6 +2,8 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useState } from "react";
 import axios from "axios";
 import { Button } from "@mui/material";
+import Loading from './Loading'
+import { FormHelperText, FormControl } from "@mui/material";
 
 const CARD_OPTIONS = {
   iconStyle: "solid",
@@ -25,6 +27,7 @@ const CARD_OPTIONS = {
 
 export default function StripePayment({setFormMode}) {
   const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
   const stripe = useStripe();
   const elements = useElements();
   const handleSubmit = async (e) => {
@@ -41,9 +44,12 @@ export default function StripePayment({setFormMode}) {
           amount: 100,
           id,
         });
+        setLoading(true)
+
         if (response.data.success) {
           console.log("successful payment");
           setSuccess(true);
+          setLoading(false);
         }
       } catch (error) {
         console.log("error", error);
@@ -54,15 +60,20 @@ export default function StripePayment({setFormMode}) {
   };
   return (
   <>
+  
   {!success ? 
   <form onSubmit={handleSubmit}>
     <fieldset className="FormGroup">
       <div className="FormRow">
         <CardElement options={CARD_OPTIONS}/>
       </div>
+    
     </fieldset>
+    <FormControl>
+    <FormHelperText>Payment is current only setup on stripe testing, repeat 4242 for all fields to test.</FormHelperText>
+    </FormControl>
     <div className="form-button-group">
-    <Button type="submit" variant="contained" sx={{background:'black'}}>Pay</Button>
+    <Button onClick={()=>setLoading(true)} type="submit" variant="contained" sx={{background:'black'}}>Pay</Button>
     <Button onClick={() => setFormMode("review")} variant="contained">Back</Button>
     </div>
 
@@ -70,10 +81,11 @@ export default function StripePayment({setFormMode}) {
   :
   <div>
     <h2>Purchase Successful</h2>
-    <p>You will recieve an email of your receipt and you will hear from us through email within 2 weeks. Thank you for your purchase.</p>
+    <p>You will recieve an email of your receipt and you will hear from us within 2 weeks. Thank you for your purchase.</p>
     <Button variant='contained'>Close</Button>
     </div>
   }
+ {loading && <Loading/>}
   </>
   );
 }

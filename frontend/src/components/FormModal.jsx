@@ -3,12 +3,13 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Modal from '@mui/material/Modal';
-import { FormControl, InputLabel, Input, FormHelperText, FormGroup, Select, MenuItem, TextField  } from '@mui/material';
+import { FormControl, InputLabel, Input, FormHelperText, FormGroup, Select, MenuItem, TextField, IconButton  } from '@mui/material';
 import { motion } from 'framer-motion'
 import { ButtonUnstyled } from '@mui/base';
 import { useState } from 'react';
 import ReviewForm from './ReviewForm'
 import PaymentForm from './PaymentForm'
+import CloseIcon from '@mui/icons-material/Close';
 
 const style = {
   position: 'absolute',
@@ -29,6 +30,7 @@ export default function BasicModal({open, setOpen}) {
     email: '',
     engine: '',
     service: '',
+    mods: '',
 
   })
 
@@ -47,7 +49,11 @@ export default function BasicModal({open, setOpen}) {
   
 
   const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const handleClose = () => {
+   
+    setOpen(false)
+    setFormMode('options')
+  };
 
   return (
     <div>
@@ -62,6 +68,10 @@ export default function BasicModal({open, setOpen}) {
   transition={{ ease: "easeOut", duration: 1 }}
   >
         {formMode === 'options' && <Box className='order-form' sx={style}>
+          <IconButton className="close-button" onClick={handleClose}><CloseIcon/></IconButton>
+          <Typography className='form-title' sx={{textAlign:'center'}}variant='h5'>
+            Order Information
+            </Typography>
           <form onSubmit={handleSubmit}>
           <FormGroup>
         <FormControl sx={{margin:'15px'}}>
@@ -92,9 +102,9 @@ value={formResults.engine}
     name="engine"
     label="Select Engine"
   >
-    <MenuItem value={'Honda'}>K20 (2002-2011 SI, Type-S)</MenuItem>
-    <MenuItem value={'Subaru'}>EJ20/EJ25 (2002-2014 WRX, STI)</MenuItem>
-    <MenuItem value={'Mitsubishi'}>4B11T (2010-2016 Evo, Ralliart)</MenuItem>
+    <MenuItem value={'K20'}>K20 (2002-2011 SI, Type-S)</MenuItem>
+    <MenuItem value={'EJ20/EJ25'}>EJ20/EJ25 (2002-2014 WRX, STI)</MenuItem>
+    <MenuItem value={'4B11T'}>4B11T (2010-2016 Evo, Ralliart)</MenuItem>
   </Select>
   <FormHelperText>We currently only offer services for the above platforms.
     If you do not see your vehicle on the list, you can contact us directly.
@@ -114,19 +124,24 @@ sx={{color:'black'}}
     label="Select Service"
   >
     <MenuItem value={'Burble'}>Burble Tune [$400.00]</MenuItem>
-    <MenuItem value={'Performance'}>Performance Tune [$500.00]</MenuItem>
+    <MenuItem value={'Performance'}>Performance Tune [$400.00]</MenuItem>
   </Select>
 
 </FormControl>
 <FormControl sx={{margin:'15px'}}>
   <TextField 
+  required
+  defaultValue={formResults.mods}
+  name='mods'
+  onChange={handleChange}
+  
   multiline
   rows={4}
   placeholder="Please enter all vehicle modifications"
   />
 </FormControl>
 
-<FormControl sx={{margin:'15px'}}>
+<FormControl sx={{margin:'1em'}}>
   <Button type="submit" variant="contained">
     Proceed To Checkout
   </Button>

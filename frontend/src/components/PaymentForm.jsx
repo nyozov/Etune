@@ -33,7 +33,7 @@ export default function Payment({ formResults, setFormMode }) {
   return (
     
       <Box className="order-form" sx={style}>
-        <Typography sx={{textAlign:'center'}}variant='h5'>
+        <Typography className='form-title' sx={{textAlign:'center'}}variant='h5'>
             Payment
             </Typography>
 <Elements stripe={stripeTestPromise}>

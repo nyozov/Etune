@@ -11,6 +11,10 @@ import {
   TextField,
 } from "@mui/material";
 import { Box } from "@mui/system";
+import { List, ListItem } from "@mui/material";
+
+
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -23,26 +27,28 @@ const style = {
   p: 4,
 };
 
+
 export default function Payment({ formResults, setFormMode }) {
   return (
     <div>
       <Box className="order-form" sx={style}>
-
         <FormGroup>
-          <Typography sx={{textAlign:'center'}}variant='h5'>
+          <Typography className='form-title' sx={{textAlign:'center'}}variant='h5'>
             Review Options
             </Typography>
-          <FormControl sx={{color:'rgba(0,0,0,0.75)'}}>
+          <FormControl sx={{ textAlign:'center', color:'rgba(0,0,0,0.7)'}}>
            
 
             
-            <ul>
-              <li>Email: {formResults.email}</li>
-              <li>Vehicle: {formResults.engine}</li>
-              <li>Service: {formResults.service}</li>
-            </ul>
+            <List>
+              <ListItem>Email: {formResults.email}</ListItem>
+              <ListItem>Engine: {formResults.engine}</ListItem>
+              <ListItem>Tune Type: {formResults.service}</ListItem>
+              <ListItem>Modifications: {formResults.mods}</ListItem>
+              <ListItem>Cost: $400.00</ListItem>
+            </List>
             <FormHelperText>
-              Please review the above information before you proceed to payment.
+             * Please review the above information before you proceed to payment.
             </FormHelperText>
           </FormControl>
           <FormControl>

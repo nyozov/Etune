@@ -50,6 +50,7 @@ code {
 
 .shadow{
   text-shadow: 2px 2px 5px black;
+  text-align: center;
 }
 
 .icon-container{
@@ -65,13 +66,17 @@ code {
 }
 .navbar{
   height: 100px !important;
+ 
 }
 
 .order-form{
   width: 500px;
-  height: 620px;
+  height: 625px;
 }
 @media only screen and (max-width:450px){
+  .order-form{
+    height:655px;
+  }
   .sidebar{
     width:50vw !important; 
   }
@@ -106,3 +111,10 @@ li{
   padding:5px;
   margin:5px;
 }
+
+.close-button{
+  position: absolute !important;
+  top: 0;
+  right: 0;
+}
+
