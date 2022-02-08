@@ -5,6 +5,7 @@ import { Button } from "@mui/material";
 import Loading from './Loading'
 import { FormHelperText, FormControl } from "@mui/material";
 
+
 const CARD_OPTIONS = {
   iconStyle: "solid",
   style: {
@@ -36,15 +37,16 @@ export default function StripePayment({setFormMode}) {
       type: "card",
       card: elements.getElement(CardElement),
     });
-
+    
     if (!error) {
       try {
+        setLoading(true)
         const { id } = paymentMethod;
         const response = await axios.post("http://localhost:4000/payment", {
           amount: 100,
           id,
         });
-        setLoading(true)
+        
 
         if (response.data.success) {
           console.log("successful payment");
@@ -61,24 +63,25 @@ export default function StripePayment({setFormMode}) {
   return (
   <>
   
-  {!success ? 
+  {!success && !loading &&
   <form onSubmit={handleSubmit}>
-    <fieldset className="FormGroup">
+    <fieldset className="payment-form">
       <div className="FormRow">
         <CardElement options={CARD_OPTIONS}/>
       </div>
     
     </fieldset>
     <FormControl>
-    <FormHelperText>Payment is current only setup on stripe testing, repeat 4242 for all fields to test.</FormHelperText>
+    <FormHelperText>* Payment is current only setup on stripe testing, repeat 4242 for all fields to test.</FormHelperText>
     </FormControl>
     <div className="form-button-group">
-    <Button onClick={()=>setLoading(true)} type="submit" variant="contained" sx={{background:'black'}}>Pay</Button>
+    <Button type="submit" variant="contained" sx={{background:'black'}}>Pay</Button>
     <Button onClick={() => setFormMode("review")} variant="contained">Back</Button>
     </div>
 
   </form>
-  :
+}
+{success && !loading &&
   <div>
     <h2>Purchase Successful</h2>
     <p>You will recieve an email of your receipt and you will hear from us within 2 weeks. Thank you for your purchase.</p>
