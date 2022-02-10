@@ -11,9 +11,6 @@ import ReviewForm from './ReviewForm'
 import PaymentForm from './PaymentForm'
 import CloseIcon from '@mui/icons-material/Close';
 
-const sgMail = require("@sendgrid/mail");
-
-sgMail.setApiKey(process.env.REACT_APP_SENDGRID_API_KEY);
 
 
 
@@ -60,24 +57,7 @@ export default function BasicModal({open, setOpen}) {
     setOpen(false)
     setFormMode('options')
   };
-  const msg = {
-    to: "nivoko6179@chatich.com", // Change to your recipient
-    from: "etunetest@outlook.com", // Change to your verified sender
-    subject: "Sending with SendGrid is Fun",
-    text: "and easy to do anywhere, even with Node.js",
-    html: "<strong>and easy to do anywhere, even with Node.js</strong>",
-  };
-  
-  const sendEmail = () => {
-    sgMail
-      .send(msg)
-      .then(() => {
-        console.log("Email sent");
-      })
-      .catch((error) => {
-        console.error(error);
-      });
-  };
+ 
   return (
     <div>
       <Modal
@@ -179,7 +159,7 @@ sx={{color:'black'}}
 <ReviewForm formResults={formResults} formMode={formMode} setFormMode={setFormMode}/>
 }
 {formMode === 'payment' &&
-<PaymentForm sendEmail={sendEmail} handleClose={handleClose} formResults={formResults} formMode={formMode} setFormMode={setFormMode}/>
+<PaymentForm handleClose={handleClose} formResults={formResults} formMode={formMode} setFormMode={setFormMode}/>
 }
         </motion.div>
       </Modal>

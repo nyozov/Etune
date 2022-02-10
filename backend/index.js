@@ -4,10 +4,40 @@ require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_SECRET_TEST);
 const bodyParser = require("body-parser");
 const cors = require("cors");
+const sgMail = require("@sendgrid/mail");
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
+
+ 
+
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
+
+app.post("/email", cors(), async (req, res) => {
+
+const msg = {
+  to: "nivoko6179@chatich.com", // Change to your recipient
+  from: "etunetest@outlook.com", // Change to your verified sender
+  subject: "Your E-Tune Order",
+  text: "and easy to do anywhere, even with Node.js",
+  html: "<strong>and easy to do anywhere, even with Node.js</strong>",
+};
+try {
+  sgMail
+  .send(msg)
+  .then(() => {
+    console.log("Email sent");
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+} catch (error) {
+  console.log('email error:', error.message)
+}
+})
 
 app.post("/payment", cors(), async (req, res) => {
   let { amount, id } = req.body;
