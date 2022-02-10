@@ -15,6 +15,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { motion } from 'framer-motion';
 import { useState } from 'react';
 
+
 const pages = ['About', 'Gallery', 'Services'];
 
 const ResponsiveAppBar = () => {
@@ -42,11 +43,12 @@ const ResponsiveAppBar = () => {
       <motion.div
     initial={{opacity:0}}
     animate={{opacity: 1}}
-    transition={{ duration: 1.5 }}>
+    transition={{delay: 0.5, duration: 1.5 }}>
         <Toolbar sx={{justifyContent:'center'}}disableGutters>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'flex' } }}>
             <IconButton
+              className='burger-icon'
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -76,10 +78,14 @@ const ResponsiveAppBar = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                  <Typography  textAlign="center">{page}</Typography>
+                  <Typography>{page}</Typography>
                 </MenuItem>
               ))}
+              <MenuItem onClick={handleCloseNavMenu}>
+              <Typography>Schedule Meeting</Typography>
+              </MenuItem>
             </Menu>
+           
           </Box>
         
           
@@ -92,7 +98,9 @@ const ResponsiveAppBar = () => {
               >
                 {page}
               </Button>
+             
             ))}
+            <Button className='meeting-button' variant='contained' sx={{fontSize:'small', borderRadius: '20px', position:'fixed', top:'0', right:'0'}}>Schedule Meeting</Button>
           </Box>
 
           

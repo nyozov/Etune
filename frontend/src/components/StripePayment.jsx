@@ -26,7 +26,7 @@ const CARD_OPTIONS = {
   }
 }
 
-export default function StripePayment({setFormMode}) {
+export default function StripePayment({setFormMode, handleClose}) {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const stripe = useStripe();
@@ -82,10 +82,10 @@ export default function StripePayment({setFormMode}) {
   </form>
 }
 {success && !loading &&
-  <div>
+  <div className="success-div">
     <h2>Purchase Successful</h2>
     <p>You will recieve an email of your receipt and you will hear from us within 2 weeks. Thank you for your purchase.</p>
-    <Button variant='contained'>Close</Button>
+    <Button onClick={handleClose} variant='contained'>Close</Button>
     </div>
   }
  {loading && <Loading/>}

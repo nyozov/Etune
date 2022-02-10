@@ -1,5 +1,4 @@
-import { Typography } from '@mui/material';
-import Box from '@mui/material/Box';
+import { Typography, Box, IconButton } from '@mui/material';
 import ButtonGroup from './ButtonGroup';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import MailIcon from '@mui/icons-material/Mail';
@@ -13,39 +12,46 @@ export default function BoxSx({setFormOpen}) {
         width: '300px',
         height: '100vh',
         backgroundColor: 'rgba(0, 0, 0, 0.5)',
-        backdropFilter: 'blur(5px)'
+     
+        marginLeft: '-120px',
       }}
     >
        <div className='icon-container'>
        <motion.div
         initial={{opacity:0}}
         animate={{opacity: 1}}
-        transition={{ duration: 1.5 }}
+        transition={{ delay: 2, duration: 1 }}
         
         >
-  <InstagramIcon sx={{ color:'rgba(255,255,255,0.8)'}}/>
+  <IconButton>
+    <InstagramIcon sx={{ color:'rgba(255,255,255,0.8)'}}/>
+  </IconButton>
   </motion.div>
   <motion.div
         initial={{opacity:0}}
         animate={{opacity: 1}}
-        transition={{ duration: 2 }}
+        transition={{ delay:2.5, duration: 1 }}
         
         >
+          <IconButton>
   <MailIcon sx={{ color:'rgba(255,255,255,0.8)'}} />
+  </IconButton>
   </motion.div>
   <motion.div
         initial={{opacity:0}}
         animate={{opacity: 1}}
-        transition={{ duration: 2.5 }}
+        transition={{ delay: 3, duration: 1 }}
         
         >
+          <IconButton>
   <FacebookIcon sx={{ color:'rgba(255,255,255,0.8)'}} />
+  </IconButton>
   </motion.div>
   </div>
   <motion.div className="title-group"
     initial={{opacity:0}}
     animate={{opacity: 1}}
-    transition={{ duration: 3.5 }}>
+    transition={{delay:3.5, duration: 1 }}>
       <Typography className='shadow' sx={{width:'300px', marginLeft:18.5, marginTop:25}} color='white' variant='h6'>
         Professional E-Tuning Service
       </Typography>

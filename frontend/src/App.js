@@ -14,8 +14,16 @@ function App() {
   return (
     <div className="App">
       <div className="nav-grid">
-       
+      <motion.div
+      marginLeft='120px'
+      initial={{visibility:'hidden', opacity: 0, }}
+
+    
+  animate={{ x: 120, visibility: 'visible', opacity: 1 }}
+  transition={{ delay: 2, ease: "easeOut", duration: 1 }}
+  >
       <Sidebar setFormOpen={setFormOpen}/>
+      </motion.div>
 
     
      <Navbar/>

@@ -64,8 +64,9 @@ export default function BasicModal({open, setOpen}) {
         aria-describedby="modal-modal-description"
       >
          <motion.div
-  animate={{ y: 350 }}
-  transition={{ ease: "easeOut", duration: 1 }}
+         initial={{visibility:'hidden'}}
+  animate={{ y: 365, visibility: 'visible' }}
+  transition={{ ease: 'linear', duration: 1 }}
   >
         {formMode === 'options' && <Box className='order-form' sx={style}>
           <IconButton className="close-button" onClick={handleClose}><CloseIcon/></IconButton>
@@ -155,7 +156,7 @@ sx={{color:'black'}}
 <ReviewForm formResults={formResults} formMode={formMode} setFormMode={setFormMode}/>
 }
 {formMode === 'payment' &&
-<PaymentForm formResults={formResults} formMode={formMode} setFormMode={setFormMode}/>
+<PaymentForm handleClose={handleClose} formResults={formResults} formMode={formMode} setFormMode={setFormMode}/>
 }
         </motion.div>
       </Modal>
