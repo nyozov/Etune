@@ -23,7 +23,7 @@ const PUBLIC_KEY = process.env.REACT_APP_STRIPE_KEY
 
 const stripeTestPromise = loadStripe(PUBLIC_KEY)
 
-export default function Payment({ handleClose, formResults, setFormMode }) {
+export default function Payment({ sendEmail, handleClose, formResults, setFormMode }) {
   const options = {
     // passing the client secret obtained from the server
     clientSecret: '{{CLIENT_SECRET}}',
@@ -39,7 +39,7 @@ export default function Payment({ handleClose, formResults, setFormMode }) {
 <Elements stripe={stripeTestPromise}>
  
 
-            <StripePayment handleClose={handleClose} setFormMode={setFormMode}/>
+            <StripePayment sendEmail={sendEmail} handleClose={handleClose} setFormMode={setFormMode}/>
             
         
             </Elements>

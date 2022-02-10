@@ -26,7 +26,7 @@ const CARD_OPTIONS = {
   }
 }
 
-export default function StripePayment({setFormMode, handleClose}) {
+export default function StripePayment({sendEmail, setFormMode, handleClose}) {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const stripe = useStripe();
@@ -37,6 +37,7 @@ export default function StripePayment({setFormMode, handleClose}) {
       type: "card",
       card: elements.getElement(CardElement),
     });
+    sendEmail();
     
     if (!error) {
       try {
