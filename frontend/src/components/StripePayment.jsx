@@ -52,7 +52,9 @@ export default function StripePayment({setFormMode, handleClose}) {
         if (response.data.success) {
           console.log(response)
           console.log("successful payment");
-          axios.post("http://localhost:4000/email")
+          axios.post("http://localhost:4000/email", {
+            email: 'nivoko6179@chatich.com'
+          })
           setSuccess(true);
           setLoading(false);
         }
