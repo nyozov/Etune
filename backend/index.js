@@ -6,20 +6,16 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const sgMail = require("@sendgrid/mail");
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-
-
- 
-
+sgMail.setApiKey(process.env.SENDGRID_API_KEY_TWO);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
 app.post("/email", cors(), async (req, res) => {
-
+  let { email } = req.body;
 const msg = {
-  to: req.body.email, // Change to your recipient
+  to: 'nahabap483@balaket.com', // Change to your recipient
   from: "etunetest@outlook.com", // Change to your verified sender
   subject: "Your E-Tune Order",
   text: "and easy to do anywhere, even with Node.js",
