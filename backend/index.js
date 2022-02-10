@@ -19,7 +19,7 @@ app.use(cors());
 app.post("/email", cors(), async (req, res) => {
 
 const msg = {
-  to: "nivoko6179@chatich.com", // Change to your recipient
+  to: req.body.email, // Change to your recipient
   from: "etunetest@outlook.com", // Change to your verified sender
   subject: "Your E-Tune Order",
   text: "and easy to do anywhere, even with Node.js",
@@ -49,7 +49,7 @@ app.post("/payment", cors(), async (req, res) => {
       payment_method: id,
       confirm: true,
     });
-    console.log("payment", payment);
+    console.log("payment", payment.status);
     res.json({
       message: "Payment Successful",
       success: true,
