@@ -18,8 +18,15 @@ const msg = {
   to: email, // Change to your recipient
   from: "etunetest@outlook.com", // Change to your verified sender
   subject: "Your E-Tune Order",
-  text: "and easy to do anywhere, even with Node.js",
-  html: "<strong>and easy to do anywhere, even with Node.js</strong>",
+  
+  html: 
+  `<h1>Thank You For Your Order</h1>
+  <h4>Order Details</h4>
+   <p> Engine: ${engine}, Service: ${service}, Vehicle Modifications: ${mods}<p>
+  <p>Cost: $400.00 </p>
+  <p>We have received your order, we will send you an email with details within 2 weeks.</p>
+  `,
+  
 };
 try {
   sgMail
