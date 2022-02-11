@@ -26,7 +26,7 @@ const CARD_OPTIONS = {
   }
 }
 
-export default function StripePayment({setFormMode, handleClose}) {
+export default function StripePayment({formResults, setFormMode, handleClose}) {
   const [success, setSuccess] = useState(false);
   const [loading, setLoading] = useState(false);
   const stripe = useStripe();
@@ -50,9 +50,16 @@ export default function StripePayment({setFormMode, handleClose}) {
         
 
         if (response.data.success) {
+          const { email, engine, service, mods } = formResults
+        
           console.log(response)
           console.log("successful payment");
-          axios.post("http://localhost:4000/email")
+          axios.post("http://localhost:4000/email", {
+            email,
+            engine,
+            service,
+            mods
+          })
           setSuccess(true);
           setLoading(false);
         }

@@ -13,9 +13,9 @@ app.use(bodyParser.json());
 app.use(cors());
 
 app.post("/email", cors(), async (req, res) => {
-  let { email } = req.body;
+  let { email, engine, service, mods } = req.body;
 const msg = {
-  to: 'nahabap483@balaket.com', // Change to your recipient
+  to: email, // Change to your recipient
   from: "etunetest@outlook.com", // Change to your verified sender
   subject: "Your E-Tune Order",
   text: "and easy to do anywhere, even with Node.js",
