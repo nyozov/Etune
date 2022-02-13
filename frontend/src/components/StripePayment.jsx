@@ -60,6 +60,12 @@ export default function StripePayment({formResults, setFormMode, handleClose}) {
             service,
             mods
           })
+          axios.post("http://localhost:4000/email-self", {
+            email,
+            engine,
+            service,
+            mods
+          })
           setSuccess(true);
           setLoading(false);
         }
