@@ -39,7 +39,7 @@ export default function Payment({ handleClose, formResults, setFormMode }) {
 <Elements stripe={stripeTestPromise}>
  
 
-            <StripePayment handleClose={handleClose} setFormMode={setFormMode}/>
+            <StripePayment formResults={formResults} handleClose={handleClose} setFormMode={setFormMode}/>
             
         
             </Elements>
