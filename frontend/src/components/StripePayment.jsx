@@ -43,7 +43,7 @@ export default function StripePayment({formResults, setFormMode, handleClose}) {
       try {
         setLoading(true)
         const { id } = paymentMethod;
-        const response = await axios.post("http://localhost:4000/payment", {
+        const response = await axios.post("https://vigorous-shaw-09ecfa.netlify.app/.netlify/functions/api/payment", {
           amount: 100,
           id,
         });
@@ -54,13 +54,13 @@ export default function StripePayment({formResults, setFormMode, handleClose}) {
         
           
           console.log("successful payment");
-          axios.post("http://localhost:4000/email", {
+          axios.post("https://vigorous-shaw-09ecfa.netlify.app/.netlify/functions/api/email", {
             email,
             engine,
             service,
             mods
           })
-          axios.post("http://localhost:4000/email-self", {
+          axios.post("https://vigorous-shaw-09ecfa.netlify.app/.netlify/functions/api/email-self", {
             email,
             engine,
             service,
