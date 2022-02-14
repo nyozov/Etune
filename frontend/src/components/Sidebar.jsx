@@ -48,19 +48,7 @@ export default function BoxSx({aboutOpen, setAboutOpen, setFormOpen}) {
   </IconButton>
   </motion.div>
   </div>
-  <motion.div className="title-group"
-    initial={{opacity:0}}
-    animate={{opacity: 1}}
-    transition={{delay:3.5, duration: 1 }}>
-      <Typography className='shadow' sx={{width:'300px', marginLeft:18.5, marginTop:25}} color='white' variant='h6'>
-        Professional E-Tuning Service
-      </Typography>
-      <Typography className='shadow' sx={{width: '300px', marginLeft:18.5}}color="rgba(255,255,255,0.7)">
-        Honda | Subaru | Mitsubishi
-        </Typography>
-        
-      <ButtonGroup aboutOpen={aboutOpen} setAboutOpen={setAboutOpen} setFormOpen={setFormOpen}/>
-      </motion.div>
+  
       </Box>
   );
 }

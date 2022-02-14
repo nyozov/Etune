@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import FormModal from './components/FormModal'
 import { useState } from 'react';
 import AboutPage from './components/AboutPage';
+import TitleGroup from './components/TitleGroup';
 
 
 
@@ -33,6 +34,7 @@ function App() {
 
     
      <Navbar setAboutOpen={setAboutOpen} />
+     <TitleGroup setFormOpen={setFormOpen} aboutOpen={aboutOpen} setAboutOpen={setAboutOpen}/>
      {aboutOpen && 
      <AnimatePresence>
      <motion.div

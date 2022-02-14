@@ -3,21 +3,28 @@
   src: url('./fonts/Neue\ Machina\ /NeueMachina-Regular.otf');
 }
 
+
+
 body {
   margin: auto;
-  max-width: 960px;
-  
   font-family: 'NeueMachina';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow: hidden;
+
 }
+
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
+.title-group{
+  position: absolute;
+  margin-left: 145px;
+  margin-top: 350px;
+}
 #background-video{
   filter: brightness(70%);
   object-fit: cover;
@@ -29,6 +36,10 @@ code {
   z-index: -1;
 }
 
+.about-button-group{
+  display:flex;
+  justify-content: center;
+}
 a:link {
   text-decoration: none;
 }
@@ -49,9 +60,12 @@ a:visited {
 .button-group{
   margin-top:2px;
   display:flex;
-  margin-left: 145px;
   padding: 5px;
   
+}
+
+.phone-image{
+  width: 150px;
 }
 
 .css-hip9hq-MuiPaper-root-MuiAppBar-root{
@@ -142,6 +156,11 @@ li{
   height: 90vh;
 }
 @media only screen and (max-width:450px){
+
+.shadow{
+  text-align: center;
+  width: auto;
+}
   .order-form{
     height:655px;
   }
@@ -154,8 +173,15 @@ li{
     justify-content: center;
   }
   .title-group{
-    margin-left:-60%;
+    margin-left: 0px;
+  margin-top: 0px;
+    position:fixed !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+   
   }
+  
   .navbar{
     width:50vw !important;
   }
@@ -163,7 +189,23 @@ li{
     width: 98vw !important;
   }
   .burger-icon{
+    position: fixed !important;
+    top:0 !important;
+    right:10px !important;
     visibility: visible;
   }
 }
 
+
+@media only screen and (max-width:960px){
+  .about-box{
+    margin-left: 0px;
+    margin-top: 0px;
+    width: 96vw;
+      
+      left: 50% !important;
+      top: 50% !important;
+      transform: translate(-50%, -50%) !important;
+    
+  }
+}
