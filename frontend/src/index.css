@@ -29,6 +29,14 @@ code {
   z-index: -1;
 }
 
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
 
 
 .nav-grid{
@@ -127,6 +135,11 @@ li{
   display:flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.about-box{
+  width:50vw;
+  height: 90vh;
 }
 @media only screen and (max-width:450px){
   .order-form{

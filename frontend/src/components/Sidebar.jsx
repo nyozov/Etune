@@ -4,7 +4,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import MailIcon from '@mui/icons-material/Mail';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import { motion } from 'framer-motion'
-export default function BoxSx({setFormOpen}) {
+export default function BoxSx({aboutOpen, setAboutOpen, setFormOpen}) {
   return (
     <Box
     className='sidebar'
@@ -59,7 +59,7 @@ export default function BoxSx({setFormOpen}) {
         Honda | Subaru | Mitsubishi
         </Typography>
         
-      <ButtonGroup setFormOpen={setFormOpen}/>
+      <ButtonGroup aboutOpen={aboutOpen} setAboutOpen={setAboutOpen} setFormOpen={setFormOpen}/>
       </motion.div>
       </Box>
   );
