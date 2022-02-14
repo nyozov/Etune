@@ -39,7 +39,7 @@ export default function BasicModal({ open, setOpen }) {
 
   const [formMode, setFormMode] = useState("options");
   
-  console.log(formMode);
+  
   const handleChange = (event) => {
     const name = event.target.name;
     const value = event.target.value;
@@ -47,7 +47,7 @@ export default function BasicModal({ open, setOpen }) {
   };
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(formResults);
+
 
     setFormMode("review");
   };
