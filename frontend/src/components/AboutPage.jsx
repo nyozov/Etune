@@ -13,8 +13,8 @@ const style = {
   justifyContent: 'center',
   flexDirection: 'column',
   textAlign: 'center',
-  boxSizing:'border-box',
-  overflowScrollMargin:'20px',
+ 
+  
   
   overflow: 'scroll',
   
@@ -23,7 +23,7 @@ const style = {
  
   borderRadius: "2px",
   boxShadow: 24,
-  p: 4,
+  p:4,
 };
 export default function AboutPage({setAboutOpen}) {
   return (
@@ -34,16 +34,19 @@ export default function AboutPage({setAboutOpen}) {
    
     <FormHelperText>
       <List>
-      <Typography variant='h6' sx={{ textAlign:'center', marginTop: 10}}>
+      <Typography className='about-title' variant='h6' sx={{ textAlign:'center'}}>
       How It Works
+    </Typography>
+    <Typography sx={{fontSize:'small'}}>
+      This is a mockup of a vehicle ECU tuning website for learning/testing purposes. To try it out, follow the instructions below.
     </Typography>
         <ListItem>Click on the Order Now button to open a form.</ListItem>
         <ListItem>Fill out the information (does not have to be real, can use Tempmail.org for a temporary Email).</ListItem>
-        <ListItem>The form is connected to Stripe test payment through Express backend server.
+        <ListItem>The form is connected to Stripe test payment.
           Repeat 4242 for all fields in the payment form and click pay to proceed.
         </ListItem>
-        <ListItem>This form is connected to Twilio sendgrid, which will send you a copy of your order to the email that you have entered.
-          Another copy will also be sent to website email, which would be the owner of the website.
+        <ListItem>This form is also connected to Twilio SendGrid, which will send you a copy of your order to the email that you have entered.
+          Another copy will be sent to website email, which would be the owner of the website.
         </ListItem>
         <ListItem>This website is still under construction, so some buttons might not be working yet.</ListItem>
         <FormHelperText sx={{marginTop:'15px', textAlign:'center'}}>Check out the code below</FormHelperText>
@@ -58,7 +61,7 @@ export default function AboutPage({setAboutOpen}) {
         <Button variant="contained">GitHub Link</Button>
         </a>
        
-        <FormHelperText sx={{marginTop:'15px', textAlign:'center'}}>Also Available for Mobile Devices</FormHelperText>
+        <FormHelperText sx={{ marginTop:'15px', textAlign:'center'}}>Also Available for Mobile Devices</FormHelperText>
       
        <div>
     <img className='phone-image' src={phoneView}/>

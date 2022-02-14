@@ -33,7 +33,7 @@ function App() {
       
 
     
-     <Navbar setAboutOpen={setAboutOpen} />
+     <Navbar aboutOpen={aboutOpen} setAboutOpen={setAboutOpen} />
      <TitleGroup setFormOpen={setFormOpen} aboutOpen={aboutOpen} setAboutOpen={setAboutOpen}/>
      {aboutOpen && 
      <AnimatePresence>

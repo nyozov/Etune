@@ -208,4 +208,8 @@ li{
       transform: translate(-50%, -50%) !important;
     
   }
+
+  .about-title{
+    margin-top:130px !important;
+  }
 }
