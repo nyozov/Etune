@@ -12,6 +12,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.status(200).json({api: 'version1'})
+})
+
 app.post("/email", cors(), async (req, res) => {
   let { email, engine, service, mods } = req.body;
   const msg = {
