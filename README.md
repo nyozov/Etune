@@ -9,3 +9,9 @@ Stack: React, Express
 APIs: Twilio SendGrid, Stripe
 
 ## Screenshots
+![Desktop View](https://github.com/nyozov/etune/blob/master/src/assets/wide-view.png?raw=true)
+![Mobile View](https://github.com/nyozov/etune/blob/master/src/assets/phone-view.png?raw=true)
+## Links
+
+[Backend Code](https://github.com/nyozov/etune-api)
+[Deployed Website](https://nifty-chandrasekhar-58abcd.netlify.app/)
