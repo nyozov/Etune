@@ -1,11 +1,7 @@
-@font-face {
-  font-family: "NeueMachina";
-  src: url("./fonts/Neue\ Machina\ /NeueMachina-Regular.otf");
-}
+
 
 body {
   margin: auto;
-  font-family: "NeueMachina";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -18,7 +14,7 @@ code {
 .title-group {
   position: absolute;
   margin-left: 145px;
-  margin-top: 350px;
+  margin-top: 50vh;
 }
 #background-video {
   filter: brightness(70%);
