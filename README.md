@@ -10,7 +10,8 @@ APIs: Twilio SendGrid, Stripe
 
 ## Screenshots
 ![Desktop View](https://github.com/nyozov/etune/blob/master/src/assets/wide-view.png?raw=true)
-![Mobile View](https://github.com/nyozov/etune/blob/master/src/assets/phone-view.png?raw=true)
+![Mobile View](https://github.com/nyozov/etune/blob/master/src/assets/phone-view.png?=x100)
+
 ## Links
 
 [Backend Code](https://github.com/nyozov/etune-api)
