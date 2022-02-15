@@ -1,31 +1,26 @@
-@font-face{
-  font-family: 'NeueMachina';
-  src: url('./fonts/Neue\ Machina\ /NeueMachina-Regular.otf');
+@font-face {
+  font-family: "NeueMachina";
+  src: url("./fonts/Neue\ Machina\ /NeueMachina-Regular.otf");
 }
-
-
 
 body {
   margin: auto;
-  font-family: 'NeueMachina';
+  font-family: "NeueMachina";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
-
-
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
-.title-group{
+.title-group {
   position: absolute;
   margin-left: 145px;
   margin-top: 350px;
 }
-#background-video{
+#background-video {
   filter: brightness(70%);
   object-fit: cover;
   width: 100vw;
@@ -36,8 +31,8 @@ code {
   z-index: -1;
 }
 
-.about-button-group{
-  display:flex;
+.about-button-group {
+  display: flex;
   justify-content: center;
 }
 a:link {
@@ -48,168 +43,155 @@ a:visited {
   text-decoration: none;
 }
 
-
-
-.nav-grid{
+.nav-grid {
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
-  height:  100px !important;
+  height: 100px !important;
 }
 
-.button-group{
-  margin-top:2px;
-  display:flex;
+.button-group {
+  margin-top: 2px;
+  display: flex;
   padding: 5px;
-  
 }
 
-.phone-image{
+.phone-image {
   width: 150px;
 }
 
-.css-hip9hq-MuiPaper-root-MuiAppBar-root{
+.css-hip9hq-MuiPaper-root-MuiAppBar-root {
   height: 65px;
 }
 
-.shadow{
+.shadow {
   text-shadow: 2px 2px 5px black;
   text-align: center;
 }
 
-.icon-container{
- 
- 
-  display:flex;
+.icon-container {
+  display: flex;
   flex-direction: column;
-  height:200px;
+  height: 200px;
   justify-content: space-evenly;
   margin-left: 1em;
-  
+
   padding: 10px;
 }
-.navbar{
+.navbar {
   height: 100px !important;
- 
 }
 
-.order-form{
+.order-form {
   width: 500px;
   height: 625px;
 }
 
-li{
+li {
   list-style-type: none;
 }
 
-.form-button-group{
-  display:flex;
+.form-button-group {
+  display: flex;
   flex-direction: column;
-  
-  
 }
 
-.form-button-group Button{
-  padding:5px;
-  margin:5px;
+.form-button-group Button {
+  padding: 5px;
+  margin: 5px;
 }
 
-.close-button{
+.close-button {
   position: absolute !important;
   top: 0;
   right: 0;
 }
 
-.payment-form{
-  margin-top:4em;
+.payment-form {
+  margin-top: 4em;
 }
 
-
-.loading-container{
-  display:flex;
+.loading-container {
+  display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.burger-icon{
+.burger-icon {
   visibility: hidden;
 }
 
-.meeting-button{
-  margin-top:1.3em !important;
+.meeting-button {
+  margin-top: 1.3em !important;
   margin-right: 1.3em !important;
 }
 
-.meeting-button:hover{
+.meeting-button:hover {
   background-color: transparent !important;
-  box-shadow: 1px 1px 9px rgba(255,255,255, 0.5) !important;
+  box-shadow: 1px 1px 9px rgba(255, 255, 255, 0.5) !important;
 }
 
-.success-div{
-  display:flex;
+.success-div {
+  display: flex;
   justify-content: center;
   flex-direction: column;
 }
 
-.about-box{
-  width:50vw;
+.about-box {
+  width: 50vw;
   height: 90vh;
 }
-@media only screen and (max-width:450px){
-
-.shadow{
-  text-align: center;
-  width: auto;
-}
-  .order-form{
-    height:655px;
+@media only screen and (max-width: 450px) {
+  .shadow {
+    text-align: center;
+    width: auto;
   }
-  .sidebar{
-    width:50vw !important; 
+  .order-form {
+    height: 655px;
   }
-  .body{
+  .sidebar {
+    width: 50vw !important;
+  }
+  .body {
     text-align: center;
     display: flex;
     justify-content: center;
   }
-  .title-group{
+  .title-group {
     margin-left: 0px;
-  margin-top: 0px;
-    position:fixed !important;
+    margin-top: 0px;
+    position: fixed !important;
     left: 50% !important;
     top: 50% !important;
     transform: translate(-50%, -50%) !important;
-   
   }
-  
-  .navbar{
-    width:50vw !important;
+
+  .navbar {
+    width: 50vw !important;
   }
-  .order-form{
+  .order-form {
     width: 98vw !important;
   }
-  .burger-icon{
+  .burger-icon {
     position: fixed !important;
-    top:0 !important;
-    right:10px !important;
+    top: 0 !important;
+    right: 10px !important;
     visibility: visible;
   }
 }
 
-
-@media only screen and (max-width:960px){
-  .about-box{
+@media only screen and (max-width: 960px) {
+  .about-box {
     margin-left: 0px;
     margin-top: 0px;
     width: 96vw;
-      
-      left: 50% !important;
-      top: 50% !important;
-      transform: translate(-50%, -50%) !important;
-    
+
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
   }
 
-  .about-title{
-    margin-top:130px !important;
+  .about-title {
+    margin-top: 130px !important;
   }
 }
