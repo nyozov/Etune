@@ -23,7 +23,6 @@ const style = {
   transform: "translate(-50%, -50%)",
 
   bgcolor: "white",
-  backdropFilter: "blur(5px)",
   borderRadius: "2px",
   boxShadow: 24,
   p: 4,

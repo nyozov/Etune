@@ -16,7 +16,7 @@ const style = {
  
   
   
-  overflow: 'scroll',
+  overflow: 'auto',
   
 
   bgcolor: "white",
