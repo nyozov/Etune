@@ -17,7 +17,7 @@ function App() {
       <div className="nav-grid">
         <motion.div
           marginLeft="120px"
-          initial={{ visibility: "hidden", }}
+          initial={{ visibility: "hidden" }}
           animate={{ x: 120, visibility: "visible", opacity: 1 }}
           transition={{ delay: 2, ease: "easeOut", duration: 1 }}
         >

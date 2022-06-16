@@ -1,9 +1,11 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import ButtonUnstyled, { buttonUnstyledClasses } from '@mui/base/ButtonUnstyled';
-import { styled } from '@mui/system';
+import { forwardRef } from "react";
+import PropTypes from "prop-types";
+import ButtonUnstyled, {
+  buttonUnstyledClasses,
+} from "@mui/base/ButtonUnstyled";
+import { styled } from "@mui/system";
 
-const ButtonRoot = React.forwardRef(function ButtonRoot(props, ref) {
+const ButtonRoot = forwardRef(function ButtonRoot(props, ref) {
   const { children, ...other } = props;
 
   return (
@@ -22,23 +24,23 @@ ButtonRoot.propTypes = {
 };
 
 const blue = {
-  50: 'rgba(255, 255, 255, 0.2)',
-  100: 'rgba(255, 255, 255, 0.3)',
-  200: 'rgba(255, 255, 255, 0.4)',
-  400: 'rgba(255, 255, 255, 0.5)',
-  500: 'rgba(255, 255, 255, 0.6)',
-  600: 'rgba(255, 255, 255, 0.7)',
-  800: 'rgba(255, 255, 255, 0.8)',
-  900: 'rgba(255, 255, 255, 0.9)',
+  50: "rgba(255, 255, 255, 0.2)",
+  100: "rgba(255, 255, 255, 0.3)",
+  200: "rgba(255, 255, 255, 0.4)",
+  400: "rgba(255, 255, 255, 0.5)",
+  500: "rgba(255, 255, 255, 0.6)",
+  600: "rgba(255, 255, 255, 0.7)",
+  800: "rgba(255, 255, 255, 0.8)",
+  900: "rgba(255, 255, 255, 0.9)",
 };
 
 const CustomButtonRoot = styled(ButtonRoot)(
   ({ theme }) => `
   overflow: visible;
   cursor: pointer;
-  --main-color: ${theme.palette.mode === 'light' ? blue[600] : blue[100]};
-  --hover-color: ${theme.palette.mode === 'light' ? blue[50] : blue[900]};
-  --active-color: ${theme.palette.mode === 'light' ? blue[100] : blue[800]};
+  --main-color: ${theme.palette.mode === "light" ? blue[600] : blue[100]};
+  --hover-color: ${theme.palette.mode === "light" ? blue[50] : blue[900]};
+  --active-color: ${theme.palette.mode === "light" ? blue[100] : blue[800]};
 
   & polygon {
     fill: transparent;
@@ -74,7 +76,7 @@ const CustomButtonRoot = styled(ButtonRoot)(
 
   &:focus,
   &.${buttonUnstyledClasses.focusVisible} {
-    outline: 2px solid ${theme.palette.mode === 'dark' ? 'white' : 'white'};
+    outline: 2px solid ${theme.palette.mode === "dark" ? "white" : "white"};
     outline-offset: 2px;
   }
 
@@ -104,11 +106,11 @@ const CustomButtonRoot = styled(ButtonRoot)(
     & svg {
       margin: 0 5px;
     }
-  }`,
+  }`
 );
 
-const SvgButton = React.forwardRef(function SvgButton(props, ref) {
+const SvgButton = forwardRef(function SvgButton(props, ref) {
   return <ButtonUnstyled {...props} component={CustomButtonRoot} ref={ref} />;
 });
 
-export default SvgButton
+export default SvgButton;

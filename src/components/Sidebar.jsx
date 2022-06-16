@@ -4,7 +4,7 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import MailIcon from "@mui/icons-material/Mail";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { motion } from "framer-motion";
-export default function BoxSx({ aboutOpen, setAboutOpen, setFormOpen }) {
+export default function BoxSx() {
   return (
     <Box
       className="sidebar white-glassmorphism"
