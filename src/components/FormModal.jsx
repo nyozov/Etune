@@ -10,7 +10,7 @@ import {
   TextField,
   IconButton,
 } from "@mui/material";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import ReviewForm from "./ReviewForm";
 import PaymentForm from "./PaymentForm";
@@ -59,16 +59,19 @@ export default function BasicModal({ open, setOpen }) {
 
   return (
     <div>
+
+    
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-      >
+        >
+        <AnimatePresence>
         <motion.div
-          initial={{ visibility: "hidden" }}
-          animate={{ y: 365, visibility: "visible" }}
-          transition={{ ease: "linear", duration: 1 }}
+           initial={{ opacity: 0 }}
+           animate={{ opacity: 1 }}
+           exit={{ opacity: 0 }}
         >
           {formMode === "options" && (
             <Box className="order-form" sx={style}>
@@ -183,12 +186,12 @@ export default function BasicModal({ open, setOpen }) {
             <PaymentForm
               formResults={formResults}
               handleClose={handleClose}
-              formResults={formResults}
               formMode={formMode}
               setFormMode={setFormMode}
             />
           )}
         </motion.div>
+      </AnimatePresence>
       </Modal>
     </div>
   );
